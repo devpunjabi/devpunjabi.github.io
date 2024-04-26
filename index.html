@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Modern Portfolio</title>
     <style>
-        /* Basic styling for the portfolio */
+        /* Modern styling for the portfolio */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f8f8;
         }
         .container {
             max-width: 1200px;
@@ -20,6 +20,7 @@
         h1 {
             text-align: center;
             margin-bottom: 30px;
+            color: #333;
         }
         .gallery {
             display: grid;
@@ -30,12 +31,17 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>My Portfolio</h1>
+        <h1>My Modern Portfolio</h1>
         <div class="gallery">
             <!-- Add your images here -->
             <img src="image1.jpg" alt="Image 1">
