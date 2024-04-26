@@ -3,52 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Modern Portfolio</title>
+    <title>My Website</title>
     <style>
-        /* Modern styling for the portfolio */
+        /* Styling for the navigation tabs */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .navbar a.active {
+            background-color: #4CAF50;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+        /* Styling for the content */
+        .content {
+            padding: 20px;
+        }
         h1 {
-            text-align: center;
-            margin-bottom: 30px;
             color: #333;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .gallery img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#inspirations">Inspirations</a>
+        <a href="#career">Career</a>
+        <a href="#artworks">Artworks</a>
+        <a href="#sports">Sports</a>
+    </div>
     <div class="container">
-        <h1>My Modern Portfolio</h1>
-        <div class="gallery">
-            <!-- Add your images here -->
-            <img src="image1.jpg" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
-            <!-- Add more images as needed -->
+        <div class="content" id="home">
+            <h1>Home</h1>
+            <p>Welcome to my website!</p>
+        </div>
+        <div class="content" id="about" style="display: none;">
+            <h1>About Me</h1>
+            <p>I am passionate about...</p>
+        </div>
+        <div class="content" id="inspirations" style="display: none;">
+            <h1>Inspirations</h1>
+            <p>Here are some things that inspire me...</p>
+        </div>
+        <div class="content" id="career" style="display: none;">
+            <h1>Career</h1>
+            <p>My professional journey...</p>
+        </div>
+        <div class="content" id="artworks" style="display: none;">
+            <h1>Artworks</h1>
+            <p>My creative works...</p>
+        </div>
+        <div class="content" id="sports" style="display: none;">
+            <h1>Sports</h1>
+            <p>My favorite sports...</p>
         </div>
     </div>
+
+    <script>
+        // JavaScript to toggle display of content based on clicked tab
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.querySelector(this.getAttribute('href')).style.display = 'block';
+                document.querySelectorAll('.navbar a').forEach(anchor => {
+                    anchor.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
