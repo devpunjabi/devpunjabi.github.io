@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <style>
-      /* Styling for the background image */
+        /* Styling for the background image */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -18,15 +18,13 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            text-align: center;
             position: relative;
             z-index: 1; /* Ensure tabs appear above the background */
+            text-align: center;
         }
         /* Styling for the navigation tabs */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
             overflow: hidden;
-            border-radius: 10px;
         }
         .navbar a {
             display: inline-block;
@@ -34,13 +32,14 @@
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
+            margin: 0 10px; /* Add margin between tabs */
         }
         .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white on hover */
+            color: lightgrey; /* Change text color on hover */
         }
         .navbar a.active {
-            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white for active tab */
+            color: lightgrey; /* Change text color for active tab */
         }
         /* Styling for the content */
         .content {
@@ -53,20 +52,29 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a class="active" href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="inspirations.html">Inspirations</a>
-        <a href="career.html">Career</a>
-        <a href="artworks.html">Artworks</a>
-        <a href="sports.html">Sports</a>
-    </div>
-    <div class="container" id="content">
-        <!-- Content will be dynamically loaded here -->
+    <div class="container">
+        <!-- Main content -->
+        <h1>Welcome to My Website</h1>
+        
+        <!-- Navigation tabs -->
+        <div class="navbar">
+            <a class="active" href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="inspirations.html">Inspirations</a>
+            <a href="career.html">Career</a>
+            <a href="artworks.html">Artworks</a>
+            <a href="sports.html">Sports</a>
+        </div>
+        
+        <!-- Content sections -->
+        <div class="content" id="content">
+            <!-- Content will be dynamically loaded here -->
+        </div>
     </div>
 
+    <!-- JavaScript to handle tab clicks -->
     <script>
-        // JavaScript to dynamically load content
+        // JavaScript to toggle display of content based on clicked tab
         document.querySelectorAll('.navbar a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
